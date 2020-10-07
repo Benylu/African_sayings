@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type= "text/css" href="African_sayings.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </head> 
+    <body id="everything">
+    
+        <div id="wrapper">
+            <div id="left"></div>
+            <div id="right"></div>
+            <h5 id="enTranslation"></h5>
+            <div id="sayingDiv">
+                <h1 id="title">African   sayings</h1>
+                <img id="quotes" src="Quotation_marks.png" alt="Quotatio marks">
+                <img id="qtemplate" src="greenery2.jpg" alt="template for a quote">
+                <h3 id="sayingText"></h3>
+            </div>
+            <button id="button" class="btn btn-light" onclick="displayquote()" type="button">Click me</button>
+            <audio id ="audio" preload="auto" controls autoplay loop>
+                <source src="" type="audio/mpeg">
+            </audio> 
+            <img id="illustration" src="" alt="illustration is displayed here">
+        </div>
+
+        <!-- JAVASCRIPT --> 
+    <script>
+        arr=[{saying:"MUANA MUKIE AKOKI KOBETA MBUNDA, MIKOLO PE BA BINI", translation:"A kid is able to of  play the drum and make adults dance", audio: "Mbonda.mp3", illustration:"Mbonda.png"},
+        {saying:"MOKILI EZALI LOKOLA MBANGA YA NTABA", translation:"Life is like a goat's mouth." , audio:"Ntaba.mp3",illustration:"ntaba.gif"},
+        {saying:"MBONGO EZA NA SUKA TE", translation:"There is no end to money." , audio:"Mbongo.mp3",illustration:"Mbongo.gif"},
+        {saying:"MBULA YA SIKA, MAKAMBU YA SIKA", translation:"New year, new things." , audio:"Mbula.mp3",illustration:"newyear.gif"},
+        {saying:"MOTO AMEMI MAKI, ABUNDAKA TE", translation:"A person carrying eggs doesn’t fight." , audio:"Maki2.mp3",illustration:"maki.gif"},
+        {saying:"MASUWA EKENDAKA LIBONGO ETIKALAKA", translation:"The boat leaves but the port stays." , audio:"Masuwa.mp3",illustration:"masuwa.gif"},
+        {saying:"NA ZANDO YA BASOSO, MPESE A TULAKA TE", translation: "In the hen's market, cockroaches never go out of style.", audio:"Mpese.mp3",illustration:"Mpese.png"}]
+        
+        var button = document.getElementById("button")
+        var sayingText = document.getElementById("sayingText")
+        var inEnglish = document.getElementById("enTranslation")
+        var Image = document.getElementById("illustration")
+        var audio = document.getElementById("audio")
+
+
+
+        console.log("The audio is playing")
+
+        function displayquote(){
+
+            var i = Math.floor(Math.random() * arr.length)
+            sayingText.innerHTML = arr[i].saying
+            inEnglish.innerHTML = arr[i].translation
+            audio.setAttribute("src" , arr[i].audio)
+            audio.play()
+
+            Image.setAttribute("src", arr[i].illustration)
+            Image.style.display ="inline-block"
+        }
+
+        // function Reload(){
+        //     if (document.addEventListener(Reload)){
+        //         displayquote()
+        //     // var i = Math.floor(Math.random() * arr.length)
+        //     // sayingText.innerHTML = arr[i].saying
+        //     // inEnglish.innerHTML = arr[i].translation
+
+        //     // audio.setAttribute("src" , arr[i].audio)
+        //     // audio.style.display = "inline-block"
+        //     // audio.play()
+
+        //     // Image.setAttribute("src", arr[i].illustration)
+        //     // Image.style.display ="none"
+
+        // }
+        // }
+
+        
+
+
+    </script>
+    </body>
+</html>
+
